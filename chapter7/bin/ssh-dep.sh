@@ -10,7 +10,7 @@ else
     targetEnv="$prod"
 fi
 set -euo pipefail
-cd Docker-for-Developers/chapter7
+cd ~/Docker-for-Developers/chapter7
 git fetch
 git reset --hard HEAD
 git checkout -f origin/"$GIT_BRANCH"
