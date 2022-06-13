@@ -40,9 +40,6 @@ pipeline {
       steps {
         echo "BRANCH_NAME is ${env.BRANCH_NAME}"
         echo "Deploying to ${getTarget()}"
-        withCredentials([sshUserPrivateKey(
-          credentialsId: 'jenkins.shipit',
-          keyFileVariable: 'keyfile')]) {
             sh """
                set -a
                target=${getTarget()}
@@ -50,7 +47,6 @@ pipeline {
                keyfile=${keyfile}
                ./chapter7/bin/ssh-dep.sh
                """
-          }
       }
     }
   }
