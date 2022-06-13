@@ -44,7 +44,6 @@ pipeline {
                set -a
                target=${getTarget()}
                image=${getImageName(appName)}
-               keyfile=${keyfile}
                ./chapter7/bin/ssh-dep.sh
                """
       }
