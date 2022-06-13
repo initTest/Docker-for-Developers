@@ -9,7 +9,6 @@ if [[ "$target" = "staging" ]]; then
 else
     targetEnv="$prod"
 fi
-ssh -i "$keyfile" -o StrictHostKeyChecking=no "$targetEnv" <<EOF
 set -euo pipefail
 cd Docker-for-Developers/chapter7
 git fetch
